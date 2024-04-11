@@ -24,6 +24,7 @@ a{
     border-radius:50%;
     animation: animacion 3s linear infinite;
     font-size: 40px;
+    box-shadow: 4 10 100px #16093a;
 }
 
 @keyframes animacion{

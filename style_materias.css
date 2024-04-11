@@ -1,0 +1,116 @@
+body{
+        background: url('Recursos/imagenes/bg.png') no-repeat center center;
+        background-size: cover;
+        height: 100vh;
+}
+.tabRet{
+    border-collapse:collapse;
+    border: none;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .tabRet tr{
+    height: 75px;
+  }
+  .tabRet td{
+    padding: 0;
+    width: 90px;
+    height: 75px ;
+    text-align: center;
+  }
+  .tabRet hr{
+    margin-top:1%;
+    margin-bottom: 0%;
+    width: 100%;
+  }
+
+  .reticula{
+    background:   rgb(168, 128, 179) ;
+    box-shadow: .2em .2em .5em  #333;
+    font-size: 11px;
+    font-family: Arial, Helvetica, sans-serif; 
+    height: 75px;
+    width: 97px;
+     margin: 4px;
+    padding:.3em 3px 2px 3px;
+    position: relative;
+    text-align: center;
+    color: #ffffff;
+   }
+
+   .reticula:hover, .especialidad:hover{
+        color: white;
+        cursor:pointer;
+        background-color: #aaa;
+        font-weight:bold;
+   }
+
+   .clickable {
+    background-color: (168, 128, 179);
+    }
+
+    .clickable.clicked1 {
+        background-color: green;
+    }
+
+    .clickable.clicked2 {
+        background-color: yellow;
+        color: black;
+
+    }
+
+    .clickable.clicked3 {
+        background-color: red;
+        color: black;
+    }
+
+
+   .abajo{
+        line-height: 50%;
+        position: absolute;
+        width: 100%;
+        bottom: 5px;
+   }
+   
+   .abajo hr{
+     margin:4px -10px 4px -1px;
+   }
+
+   .especialidad{
+        background: 	 rgb(168, 128, 179);
+        box-shadow: .2em .2em .5em  #333;
+        font-size: 11px;
+        font-family: Arial, Helvetica, sans-serif; 
+        height:170px;
+        margin:4px;
+        position: relative;
+        width: 100px;
+        text-align: center;
+        color: #ffffff;
+   }
+
+   .Titulo{
+        margin-bottom: 10px;
+        position:relative;
+        text-align: center;
+        transform: translate (-50%, -50%);
+        background-color: rgb(168, 128, 179);
+        height: auto;
+        width: auto;
+        margin-left: 12.5%;
+        margin-right: 12.5%;
+        color: #ffffff;
+   }
+
+   .creditos{
+    margin-bottom: 10px;
+    position:relative;
+    text-align: center;
+    transform: translate (-50%, -50%);
+    background-color: rgb(227, 243, 154);
+    height: auto;
+    width: auto;
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+    color: #230e3f;
+   }
