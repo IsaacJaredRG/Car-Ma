@@ -36,6 +36,7 @@ body{
     position: relative;
     text-align: center;
     color: #ffffff;
+    border-radius: 20%;
    }
 
    .reticula:hover, .especialidad:hover{
@@ -90,6 +91,7 @@ body{
    }
 
    .Titulo{
+        border-radius: 10%;
         margin-bottom: 10px;
         position:relative;
         text-align: center;
@@ -103,6 +105,19 @@ body{
    }
 
    .creditos{
+    margin-bottom: 10px;
+    position:relative;
+    text-align: center;
+    transform: translate (-50%, -50%);
+    background-color: rgb(227, 243, 154);
+    height: auto;
+    width: auto;
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+    color: #230e3f;
+   }
+
+   .volver{
     margin-bottom: 10px;
     position:relative;
     text-align: center;
