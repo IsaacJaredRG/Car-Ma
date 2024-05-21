@@ -27,11 +27,13 @@ clickableDivs.forEach((div) => {
 });
 
 //sacar el texto de los div
-const botonMaterias = document.getElementById("botonMaterias");
 botonMaterias.addEventListener("click", () => {
-  const clickableDivs = document.querySelectorAll(".reticula.clickable.clicked1,.reticula.clickable.clicked2,.reticula.clickable.clicked3");
-  clickableDivs.forEach((div) => {
-    const text = div.textContent;
-    console.log(`Text: ${text}`);
+    const clickableDivs = document.querySelectorAll(".reticula.clickable.clicked1,.reticula.clickable.clicked2,.reticula.clickable.clicked3");
+    clickableDivs.forEach((div) => {
+      const paragraphs = div.getElementsByTagName("p");
+      if (paragraphs.length > 0) {
+        const text = paragraphs[0].textContent;
+        console.log(`Text: ${text}`);
+      }
+    });
   });
-});
