@@ -2,6 +2,7 @@ const clickableDivs = document.querySelectorAll('.clickable');
 let prevDiv = null;
 let clickCount = 0;
 
+//Cambiar de color dependiendo del texto
 clickableDivs.forEach((div) => {
     div.addEventListener('click', () => {
         if (prevDiv && prevDiv.dataset.id!== div.dataset.id) {
@@ -23,4 +24,14 @@ clickableDivs.forEach((div) => {
             clickCount = 0;
         }
     });
+});
+
+//sacar el texto de los div
+const botonMaterias = document.getElementById("botonMaterias");
+botonMaterias.addEventListener("click", () => {
+  const clickableDivs = document.querySelectorAll(".reticula.clickable.clicked1,.reticula.clickable.clicked2,.reticula.clickable.clicked3");
+  clickableDivs.forEach((div) => {
+    const text = div.textContent;
+    console.log(`Text: ${text}`);
+  });
 });
