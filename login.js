@@ -1,20 +1,20 @@
 const loginForm = document.getElementById('login-form');
 const loginStatus = document.getElementById('login-status');
 
-let username = '';
-let password = '';
+let usuario = '';
+let contraseña = '';
 
 loginForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  username = document.getElementById('username').value;
-  password = document.getElementById('password').value;
+  usuario = document.getElementById('usuario').value;
+  contraseña = document.getElementById('contraseña').value;
 
-  // Check if username and password are correct
-  if (username === 'admin' && password === 'chikito') {
-    loginStatus.textContent = 'Login successful!';
+  // si el usuario y contraseña son correctos
+  if (usuario === 'admin' && contraseña === 'chikito') {
+    loginStatus.textContent = 'Login Exitoso!';
     loginStatus.style.color = 'green';
   } else {
-    loginStatus.textContent = 'Invalid username or password';
+    loginStatus.textContent = 'Usuario o contraseña incorrecto';
     loginStatus.style.color = 'ed';
   }
 });
