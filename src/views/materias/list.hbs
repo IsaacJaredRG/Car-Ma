@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="row mt-5">
+        {{#if materias}}
+        <table class=" table text-center" style="width:1080px;">
+            <thead>
+                <tr class="table-dark mx-auto">
+                    <th>Nombre</th>
+                    <th>Numero de creditos</th>
+                    <th>Creditos si es extra</th>
+                    <th>Horario</th>
+                    <th>Nombre del docente</th>
+                    <th>acciones</th>
+                </tr>    
+            </thead>
+            <tbody>
+                {{#each materias}}
+                    <tr>
+                        <td>{{Nombre}}</td>
+                        <td>{{Numero_creditos}}</td>
+                        <td>{{Creditos_extra}}</td>
+                        <td>{{Horario}}</td>
+                        <td>{{Nombre_docente}}</td>
+                        <td>
+                            <div class="btn-group">
+                                <a href="/edit/{{Id}}" class="btn btn-warning"><i class="fa-solid fa-pencil"></i></a>
+                                <a href="/delete/{{Id}}" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                {{/each}}
+            </tbody>
+            <tfoot>
+                <tr class="table-dark">
+                    <td colspan="6">REGISTRO DE MATERIAS</td>
+                </tr>
+            </tfoot>
+        </table>
+        
+        <div class="card text-center mx-auto" style="width:350px;">
+                <div class="card-body">
+                    <p>Presiona este boton para que puedas registrar una materia en la aplicacion</p>
+                    <a href="/add" class="btn btn-primary">Ir a crear</a>
+                </div>
+        
+            </div>
+        {{else}}
+            <div class="card text-center mx-auto" style="width:350px;">
+                <div class="card-header">
+                    <h3>Debes crear una materia</h3>
+                </div>
+                <div class="card-body">
+                    <p>Presiona este boton para que puedas registrar una materia en la aplicacion</p>
+                    <a href="/add" class="btn btn-primary">Ir a crear</a>
+                </div>
+        
+            </div>
+        {{/if}}
+    </div>
+</div>

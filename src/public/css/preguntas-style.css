@@ -1,0 +1,69 @@
+*{
+    padding:  0;
+    margin: 0;
+    box-sizing: border-box;
+    }
+
+body{
+        background: url('/css/bg.png') no-repeat center center;
+        background-size: cover;
+        height: 100vh;
+}    
+.Div_Formulario{
+    text-decoration: none;
+    color: rgb(39, 20, 150);
+    position: absolute;
+    top: 19%;
+    left: 32%;
+    transform: translate (-50%, -50%);
+    background-color: #fdf68e;
+    padding: 75px 55px;
+    font-family: 'calibri', sans-serif;
+    font-size: 40px;
+    border-radius: 12%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 5px #000;
+  }
+
+
+button{
+    text-decoration: none;
+    color: #f2f3ab;
+    position: absolute;
+    left: 50%;
+    transform: translate (-50%);
+    background-color: #967aa3;
+    padding: 10px 10px;
+    font-family: 'calibri', sans-serif;
+    text-transform: uppercase;
+    border-radius:10%;
+    font-size: 25px;  
+}
+
+input {
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #967aa3;
+    color: #f2f3ab;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 0 5px #000;
+    margin-bottom: 10px;
+  }
+
+  select {
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #967aa3;
+    color: #f2f3ab;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 0 5px #000;
+    margin-bottom: 10px;
+  }
