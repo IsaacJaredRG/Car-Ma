@@ -14,17 +14,17 @@ a{
     text-decoration: none;
     color: white;
     position: absolute;
-    top: 30%;
-    left: 42%;
+    top: 27%;
+    left: 38%;
     transform: translate (-50%, -50%);
-    background-color: rgba(203,173,211,1);
-    padding: 130px 75px;
+    background: url('/img/logo.png') no-repeat center center;
     font-family: 'calibri', sans-serif;
     text-transform: uppercase;
     border-radius:50%;
     animation: animacion 3s linear infinite;
     font-size: 40px;
     box-shadow: 4 10 100px #16093a;
+    padding: 200px 200px;
 }
 
 @keyframes animacion{

@@ -10,6 +10,8 @@ body{
         height: 100vh;
 }    
 .Div_Formulario{
+    margin: 60px auto;
+    padding: 40px;
     text-decoration: none;
     color: rgb(39, 20, 150);
     position: absolute;
@@ -17,7 +19,6 @@ body{
     left: 32%;
     transform: translate (-50%, -50%);
     background-color: #fdf68e;
-    padding: 75px 55px;
     font-family: 'calibri', sans-serif;
     font-size: 40px;
     border-radius: 12%;
@@ -66,4 +67,7 @@ input {
     text-align: center;
     box-shadow: 0 0 5px #000;
     margin-bottom: 10px;
+  }
+  .button-container {
+    display: flex;
   }
