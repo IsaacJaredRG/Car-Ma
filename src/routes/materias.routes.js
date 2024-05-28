@@ -7,6 +7,9 @@ const router = Router();
 router.get('/preguntas',(req,res)=>{
     res.render('htmls/preguntas');
 });
+router.get('/MostrarMateria',(req,res)=>{
+    res.render('htmls/MostrarMateriaYHorario');
+});
 router.get('/AccionesAdmin',(req,res)=>{
     res.render('htmls/AccionesAdmin');
 });
@@ -99,4 +102,18 @@ router.get('/delete/:Id', async(req, res)=>{
         res.status(500).json({message:err.message});
     }
 });
+//query para sacar losd atos mediante el nombre
+router.get('/query', async (req, res) => {
+    try {
+      const { query } = req.query;
+      console.log(`Parametro decodificados: ${query}`);
+      const sql = `SELECT Nombre, Horario  FROM materia WHERE Nombre LIKE?`;
+      const [rows] = await pool.query(sql, [`%${query}%`]);
+      console.log(JSON.stringify(rows, null, 2));
+      res.json(rows);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: error.message });
+    }
+  });
 export default router;
