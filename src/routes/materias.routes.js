@@ -1,15 +1,23 @@
 import {Router} from 'express'
 import pool from '../database.js'
+import session from 'express-session';
+
+
+let queryResults = {};
 
 const router = Router();
+
+router.use(session({
+    secret: 'your_secret_key',
+    resave: false,
+    saveUninitialized: true
+  }));
 
 //renderizado de paginas pq sino no cargan a la bestia yo enojado
 router.get('/preguntas',(req,res)=>{
     res.render('htmls/preguntas');
 });
-router.get('/MostrarMateria',(req,res)=>{
-    res.render('htmls/MostrarMateriaYHorario');
-});
+
 router.get('/AccionesAdmin',(req,res)=>{
     res.render('htmls/AccionesAdmin');
 });
@@ -102,18 +110,42 @@ router.get('/delete/:Id', async(req, res)=>{
         res.status(500).json({message:err.message});
     }
 });
+
+
+
 //query para sacar losd atos mediante el nombre
 router.get('/query', async (req, res) => {
     try {
       const { query } = req.query;
       console.log(`Parametro decodificados: ${query}`);
       const sql = `SELECT Nombre, Horario  FROM materia WHERE Nombre LIKE?`;
+      console.log(sql);
       const [rows] = await pool.query(sql, [`%${query}%`]);
       console.log(JSON.stringify(rows, null, 2));
-      res.json(rows);
+      console.log(req.session.queryData); // Print the current value of req.session.queryData
+      req.session.queryData = rows; // Store the results in the user session
+      res.json(rows); // Return a JSON response
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: error.message });
     }
   });
+
+  router.post('/storeResponses', (req, res) => {
+    const responses = req.body;
+    console.log('Guardando respuestas en la sesion', responses); // Agrega esta línea para verificar que las respuestas se están recibiendo
+    req.session.responses = responses;
+    res.json({ message: 'Responses stored successfully' });
+});
+
+
+
+router.get('/MostrarMateria', (req, res) => {
+    const data = req.session.responses || [];
+    console.log('Cargando la pagina con las respuestas', data); // Agrega esta línea para verificar que los datos se están recuperando de la sesión
+    res.render('htmls/mostrarMateriasYHorario', { materias: data });
+});
+
+
+
 export default router;

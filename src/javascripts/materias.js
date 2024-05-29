@@ -30,17 +30,47 @@ clickableDivs.forEach((div) => {
 
 
 //sacar el texto de los div y mandarlos a query
+const botonMaterias = document.querySelector("#botonMaterias");
+
 botonMaterias.addEventListener("click", () => {
-  const clickableDivs = document.querySelectorAll(".reticula.clickable.clicked1,.reticula.clickable.clicked2,.reticula.clickable.clicked3");
-  clickableDivs.forEach((div) => {
-    const parrafos = div.getElementsByTagName("p");
-    if (parrafos.length > 0) {
-      const texto = parrafos[0].textContent;
-      console.log(`Buscando data para ${texto}`);
-      fetch(`/query?query=${encodeURIComponent(texto)}`)
-      .then(response => response.json())
-      .then(data => console.log(data))
-      .catch(error => console.error(error));
-    }
-  });
+    const selectedDivs = document.querySelectorAll(".reticula.clickable.clicked1, .reticula.clickable.clicked2, .reticula.clickable.clicked3");
+    const fetchPromises = [];
+    let allResponses = []; // Variable para almacenar todas las respuestas
+
+    selectedDivs.forEach((div) => {
+        const parrafos = div.getElementsByTagName("p");
+        if (parrafos.length > 0) {
+            const texto = parrafos[0].textContent;
+            const fetchPromise = fetch(`/query?query=${encodeURIComponent(texto)}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Error ${response.status}: ${response.statusText}`);
+                    }
+                    return response.json();
+                });
+            fetchPromises.push(fetchPromise);
+        }
+    });
+
+    Promise.all(fetchPromises)
+        .then(results => {
+            allResponses = allResponses.concat(...results); // Unir los arrays de resultados en uno solo
+            return fetch('/storeResponses', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(allResponses) // Enviar todas las respuestas juntas como un JSON
+            });
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Error ${response.status}: ${response.statusText}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            window.location.href = '/MostrarMateria';
+        })
+        .catch(error => console.error('Fetch error:', error));
 });

@@ -2,9 +2,9 @@
   "name": "nueva-carpeta",
   "version": "1.0.0",
   "main": "index.js",
-  "type": 	"module",
+  "type": "module",
   "scripts": {
-    "dev":"nodemon ./src/index.js"
+    "dev": "nodemon ./src/index.js"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +16,7 @@
   "dependencies": {
     "express": "^4.19.2",
     "express-handlebars": "^7.1.2",
+    "express-session": "^1.18.0",
     "morgan": "^1.10.0",
     "mysql2": "^3.9.7"
   }

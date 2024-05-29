@@ -1,13 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Mis materias</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <h1>Mis materias</h1>
-  <div id="materias"></div>
+<link rel="stylesheet" type="text/css" href="/css/style_materias.css">
+<table class="tabRet">
+  <thead>
+    <tr>
+      <th>Nombre y Horario</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each materias}}
+      <tr>
+        <td >
+          <div class="reticula clickable" data-id="{{@index}}">
+            <p>{{Nombre}}</p>
+            <div class="abajo"><hr />{{Horario}}</div></div>
+          </div>
 
-  <script src="script.js"></script>
-</body>
-</html>
+        </td>
+        
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+<script src="materias.js"></script>
