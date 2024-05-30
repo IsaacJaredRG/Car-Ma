@@ -49,6 +49,26 @@ botonHorario.addEventListener("click", async () => {
         const results = await Promise.all(fetchPromises);
         allResponses = allResponses.concat(...results); // Unir los arrays de resultados en uno solo
         
+        // Organizar las respuestas por horario
+        allResponses.sort((a, b) => {
+            // Convertir el horario a formato de horas para comparar
+            const horaA = parseInt(a.Horario.split(":")[0]);
+            const horaB = parseInt(b.Horario.split(":")[0]);
+
+            // Si la hora de A es menor que la hora de B, A va antes que B
+            if (horaA < horaB) return -1;
+            // Si la hora de A es mayor que la hora de B, A va después que B
+            if (horaA > horaB) return 1;
+            // Si las horas son iguales, se compara por minutos
+            const minutoA = parseInt(a.Horario.split(":")[1]);
+            const minutoB = parseInt(b.Horario.split(":")[1]);
+            // Si los minutos de A son menores que los minutos de B, A va antes que B
+            if (minutoA < minutoB) return -1;
+            // Si los minutos de A son mayores que los minutos de B, A va después que B
+            if (minutoA > minutoB) return 1;
+            // Si las horas y los minutos son iguales, no se hace ningún cambio
+            return 0;
+        });
         // Verificar si hay nombres u horarios repetidos
         const names = new Set();
         const horarios = new Set();

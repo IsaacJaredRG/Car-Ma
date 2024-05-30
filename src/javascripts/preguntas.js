@@ -38,27 +38,18 @@ function actualizarCarreras() {
   formulario.addEventListener("submit", function(event) {
     const carrera = document.querySelector("#carrera");
     const semestre = document.querySelector("#semestre");
-    if (carrera.value === "") {
+    if(semestre.value === "" && carrera.value === ""){
       event.preventDefault();
-      const mensajeError = document.createElement("div");
-      mensajeError.textContent = "Por favor, selecciona una carrera antes de enviar el formulario.";
-      mensajeError.style.color = "red";
-      formulario.insertBefore(mensajeError, formulario.firstChild);
+      alert('¡Error! Por favor, selecciona el semestre y la carrera antes de enviar el formulario.');
       return false;
     } else if(semestre.value === ""){
       event.preventDefault();
-      const mensajeError = document.createElement("div");
-      mensajeError.textContent = "Por favor, selecciona el semestre antes de enviar el formulario.";
-      mensajeError.style.color = "red";
-      formulario.insertBefore(mensajeError, formulario.firstChild);
+      alert('¡Error! Por favor, Por favor, selecciona el semestre antes de enviar el formulario.');
       return false;
-    } else if(semestre.value === "" && carrera.value === ""){
-        event.preventDefault();
-        const mensajeError = document.createElement("div");
-        mensajeError.textContent = "Por favor, selecciona el semestre y la carrera antes de enviar el formulario.";
-        mensajeError.style.color = "red";
-        formulario.insertBefore(mensajeError, formulario.firstChild);
-        return false;
+    } else if (carrera.value === "") {
+      event.preventDefault();
+      alert('¡Error! Por favor, selecciona una carrera antes de enviar el formulario.');
+      return false;
     } else {
         event.preventDefault();
         const carreraSelect = document.getElementById('carrera');
