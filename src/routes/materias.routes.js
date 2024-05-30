@@ -146,6 +146,42 @@ router.get('/MostrarMateria', (req, res) => {
     res.render('htmls/mostrarMateriasYHorario', { materias: data });
 });
 
-
-
+//para pasar de mostrarMateria a horario
+router.get('/queryHorario', async (req, res) => {
+    try {
+      const { query1, query2 } = req.query;
+      console.log(`Parameters decoded: query1=${query1}, query2=${query2}`);
+      
+      // Consulta SQL simplificada para filtrar solo por nombre y horario
+      const sql = `
+        SELECT Nombre, Horario, Nombre_docente
+        FROM materia
+        WHERE Nombre LIKE ?
+        AND Horario LIKE ?;
+      `;
+      const [rows] = await pool.query(sql, [`%${query1}%`, `%${query2}%`]);
+      console.log(JSON.stringify(rows, null, 2));
+      console.log(req.session.queryData);
+      req.session.queryDataHorario = rows; // Store the results in the user session
+      
+      res.json(rows); // Return a JSON response with results
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: error.message });
+    }
+  });
+  
+  router.post('/storeHorario', (req, res) => {
+    const responses = req.body;
+    console.log('Saving Horario responses in session', responses); // Add this line to verify that responses are being received
+    req.session.HorarioResponses = responses;
+    res.json({ message: 'Horario responses stored successfully' });
+  });
+  
+  router.get('/Horario', (req, res) => {
+    const data = req.session.HorarioResponses || [];
+    console.log('Loading page with horario responses', data); // Add this line to verify that data is being retrieved from session
+    res.render('htmls/horario', { materias: data });
+  });
+  
 export default router;
