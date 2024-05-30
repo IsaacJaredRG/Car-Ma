@@ -33,7 +33,7 @@ body{
     flex-basis: 100%;
     padding: 10px;
     max-width: 1000px;
-    background-color: #967aa3;
+    background-color: rgb(71, 3, 102);
     color: #f2f3ab;
     border-radius: 20px;
     border: none;
@@ -50,7 +50,7 @@ body{
 input {
     border: 1px solid #000;
     border-radius: 20px;
-    background-color: #967aa3;
+    background-color: rgb(71, 3, 102);
     color: #f2f3ab;
     padding: 10px;
     font-size: 20px;
@@ -63,7 +63,7 @@ input {
   select {
     border: 1px solid #000;
     border-radius: 5px;
-    background-color: #967aa3;
+    background-color: rgb(71, 3, 102);
     color: #f2f3ab;
     padding: 10px;
     font-size: 16px;

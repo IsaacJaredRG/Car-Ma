@@ -1,28 +1,51 @@
-<link rel="stylesheet" type="text/css" href="/css/style_materias.css">
-<table class="tabRet">
+<link rel="stylesheet" type="text/css" href="/css/style-MostrarMaterias.css">
+<div class="Titulo">Selecciona tus materias</div>
+<table class="tabRet" id="tablaMaterias">
   <thead>
     <tr>
-      <th class="titulo">Nombre y Horario</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     {{#each materias}}
-      <tr>
-        <td >
+      <tr class="filaMateria">
+        <td>
           <div class="reticula clickable" data-id="{{@index}}">
             <p>{{Nombre}}</p>
-            <div class="abajo"><hr/><p>{{Horario}}</p></div></div>
+            <div class="abajo"><hr/><p>{{Horario}}</p></div>
           </div>
-
         </td>
-        
       </tr>
     {{/each}}
   </tbody>
 </table>
-        <div class="botones">
-                <button class="volver" onclick="location.href='/preguntas'">Volver</button>
-                <button id="botonHorario">Materias</button>
-        </div>
+
+<div class="button-container">
+  <button class="bonito" onclick="location.href='/preguntas'">Volver</button>
+  <button class="bonito" id="botonHorario">Imprimir Horario</button>
+</div>
 
 <script src="mostrarMaterias.js"></script>
+
+<script>
+  // Obtiene todas las filas de materias
+  var filas = document.querySelectorAll('.filaMateria');
+  var tabla = document.getElementById('tablaMaterias');
+  var numFilas = filas.length;
+
+  // Define el número de columnas deseado
+  var numColumnas = 3;
+  var filaActual = document.createElement('tr');
+  var contadorColumnas = 0;
+
+  // Distribuye las filas en columnas
+  filas.forEach(function(fila, indice) {
+    filaActual.appendChild(fila);
+    contadorColumnas++;
+    if (contadorColumnas === numColumnas || indice === numFilas - 1) {
+      tabla.appendChild(filaActual);
+      filaActual = document.createElement('tr');
+      contadorColumnas = 0;
+    }
+  });
+</script>

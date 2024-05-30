@@ -1,0 +1,10 @@
+body{
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background: url('/css/bg.png') no-repeat center center;
+        background-size: cover;
+        height: 100vh;
+}
+table td {
+    background-color: #f0f0f0; /* or any other color you prefer */
+  }

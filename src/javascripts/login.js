@@ -17,7 +17,6 @@ loginForm.addEventListener('submit', (e) => {
 
 
   } else {
-    loginStatus.textContent = 'Usuario o contraseña incorrecto';
-    loginStatus.style.color = 'ed';
+    alert("Contraseña o Usuario Incorrectos");
   }
 });

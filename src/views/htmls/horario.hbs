@@ -1,28 +1,25 @@
-<link rel="stylesheet" type="text/css" href="/css/style_materias.css">
-<table class="tabRet">
+<link rel="stylesheet" type="text/css" href="/css/style-MostrarMaterias.css">
+<div class="Titulo"> Horario</div>
+<table class="tabRet" id="tablaMaterias">
   <thead>
     <tr>
-      <th class="titulo">Nombre y Horario</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     {{#each materias}}
-      <tr>
-        <td >
+      <tr class="filaMateria">
+        <td>
           <div class="reticula clickable" data-id="{{@index}}">
             <p>{{Nombre}}</p>
-            <div class="abajo"><hr/><p>{{Horario}}</p></div></div>
+            <div class="abajo"><hr/><p>{{Horario}}</p></div>
           </div>
-
         </td>
-        
       </tr>
     {{/each}}
   </tbody>
 </table>
-        <div class="botones">
-                <button class="volver" onclick="location.href='/preguntas'">Volver</button>
-                <button id="botonHorario">Materias</button>
-        </div>
 
-<script src="mostrarMaterias.js"></script>
+<div class="button-container">
+  <button class="bonito" onclick="location.href='/preguntas'">Volver</button>
+</div>

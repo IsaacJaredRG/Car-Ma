@@ -23,6 +23,10 @@ const botonHorario = document.querySelector("#botonHorario");
 
 botonHorario.addEventListener("click", async () => {
     const selectedDivs = document.querySelectorAll(".reticula.clickable.clicked1");
+    if (selectedDivs.length === 0) {
+        alert("No seleccionaste ninguna materia");
+        return;
+    }
     const fetchPromises = [];
     let allResponses = []; // Variable para almacenar todas las respuestas
 

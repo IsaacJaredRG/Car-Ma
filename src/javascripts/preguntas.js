@@ -70,7 +70,4 @@ function actualizarCarreras() {
 
   }
 
-
-
-  
   });

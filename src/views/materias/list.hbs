@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="/css/list.css"> 
 <div class="container">
     <div class="row mt-5">
         {{#if materias}}
@@ -15,12 +16,12 @@
             <tbody>
                 {{#each materias}}
                     <tr>
-                        <td>{{Nombre}}</td>
-                        <td>{{Numero_creditos}}</td>
-                        <td>{{Creditos_extra}}</td>
-                        <td>{{Horario}}</td>
-                        <td>{{Nombre_docente}}</td>
-                        <td>
+                        <td style="background-color: #ffdd61;">{{Nombre}}</td>
+                        <td style="background-color: #ffdd61;">{{Numero_creditos}}</td>
+                        <td style="background-color: #ffdd61;">{{Creditos_extra}}</td>
+                        <td style="background-color: #ffdd61;">{{Horario}}</td>
+                        <td style="background-color: #ffdd61;">{{Nombre_docente}}</td>
+                        <td style="background-color: #ffdd61;">
                             <div class="btn-group">
                                 <a href="/edit/{{Id}}" class="btn btn-warning"><i class="fa-solid fa-pencil"></i></a>
                                 <a href="/delete/{{Id}}" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
@@ -37,7 +38,7 @@
         </table>
         
         <div class="card text-center mx-auto" style="width:350px;">
-                <div class="card-body">
+                <div style="background-color: #ffdd61;" class="card-body">
                     <p>Presiona este boton para que puedas registrar una materia en la aplicacion</p>
                     <a href="/add" class="btn btn-primary">Ir a crear</a>
                 </div>

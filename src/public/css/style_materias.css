@@ -3,6 +3,16 @@ body{
         background-size: cover;
         height: 100vh;
 }
+.button-container {
+  width: 50%; 
+  margin: 0 auto;
+  padding: 20px; 
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  height: 100px;
+}
+
 .tabRet{
     border-collapse:collapse;
     border: none;
@@ -25,7 +35,7 @@ body{
   }
 
   .reticula{
-    background:   rgb(168, 128, 179) ;
+    background:   rgb(71, 3, 102) ;
     box-shadow: .2em .2em .5em  #333;
     font-size: 11px;
     font-family: Arial, Helvetica, sans-serif; 
@@ -78,7 +88,7 @@ body{
    }
 
    .especialidad{
-        background: 	 rgb(168, 128, 179);
+        background: rgb(71, 3, 102);
         box-shadow: .2em .2em .5em  #333;
         font-size: 11px;
         font-family: Arial, Helvetica, sans-serif; 
@@ -96,7 +106,7 @@ body{
         position:relative;
         text-align: center;
         transform: translate (-50%, -50%);
-        background-color: rgb(168, 128, 179);
+        background-color: rgb(71, 3, 102);
         height: auto;
         width: auto;
         margin-left: 12.5%;
@@ -117,15 +127,23 @@ body{
     color: #230e3f;
    }
 
-   .volver{
-    margin-bottom: 10px;
-    position:relative;
-    text-align: center;
-    transform: translate (-50%, -50%);
-    background-color: rgb(227, 243, 154);
-    height: auto;
-    width: auto;
-    margin-left: 12.5%;
-    margin-right: 12.5%;
-    color: #230e3f;
-   }
+.bonito {
+  flex-basis: 100%;
+  padding: 10px;
+  max-width: 1000px;
+  background-color: rgb(71, 3, 102);
+  color: #f2f3ab;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 3px #000;
+}
+
+.bonito:hover {
+  color: white;
+  cursor:pointer;
+  background-color: #aaa;
+  font-weight:bold;
+}

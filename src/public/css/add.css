@@ -1,0 +1,27 @@
+body{
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: url('/css/bg.png') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+}
+.bonito {
+    flex-basis: 100%;
+    padding: 10px;
+    max-width: 1000px;
+    background-color: rgb(71, 3, 102);
+    color: #f2f3ab;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 3px #000;
+  }
+  
+  .bonito:hover {
+    color: white;
+    cursor:pointer;
+    background-color: #aaa;
+    font-weight:bold;
+  }

@@ -1,19 +1,72 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
+    background: url('/css/bg.png') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
   }
   
+  .Titulo{
+    border-radius: 10%;
+    margin-bottom: 10px;
+    position:relative;
+    text-align: center;
+    transform: translate (-50%, -50%);
+    background-color: #ffdd61;;
+    height: auto;
+    width: auto;
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+    color: #000000;
+}
+  
   #login-form {
-    width: 50%;
+    width: 70%;
     margin: 40px auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background-color: #ffdd61;
   }
   
   #login-status {
     margin-top: 20px;
     font-size: 18px;
     color: #666;
+  }
+  .bonito {
+    flex-basis: 100%;
+    padding: 10px;
+    max-width: 1000px;
+    background-color: rgb(71, 3, 102);
+    color: #f2f3ab;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 3px #000;
+  }
+  
+  .bonito:hover {
+    color: white;
+    cursor:pointer;
+    background-color: #aaa;
+    font-weight:bold;
+  }
+  input{
+      border: 1px solid #000;
+      border-radius: 20px;
+      background-color: rgb(71, 3, 102);
+      color: #f2f3ab;
+      padding: 10px;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      box-shadow: 0 0 5px #000;
+      margin-bottom: 10px;
+  }
+  label{
+    font-size: 20px;
   }

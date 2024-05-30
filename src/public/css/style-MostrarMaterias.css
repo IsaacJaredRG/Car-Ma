@@ -1,0 +1,104 @@
+body{
+    background: url('/css/bg.png') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+}
+.button-container {
+    width: 20%; 
+    margin: 0 auto;
+    padding: 20px; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 100px;
+  }
+  
+  .tabRet{
+      border-collapse:collapse;
+      border: none;
+      text-align: center;
+      margin: 0 auto;
+    }
+    .tabRet tr{
+      height: 75px;
+    }
+    .tabRet td{
+      padding: 0;
+      width: 90px;
+      height: 75px ;
+      text-align: center;
+    }
+    .tabRet hr{
+      margin-top:1%;
+      margin-bottom: 0%;
+      width: 100%;
+    }
+  
+    .reticula{
+      background:   rgb(71, 3, 102) ;
+      box-shadow: .2em .2em .5em  #333;
+      font-size: 15px;
+      font-family: Arial, Helvetica, sans-serif; 
+      height: 100px;
+      width: 120px;
+       margin: 4px;
+      padding:.3em 3px 2px 3px;
+      position: relative;
+      text-align: center;
+      color: #ffffff;
+      border-radius: 20%;
+     }
+  
+     .clickable {
+      background-color: (168, 128, 179);
+      }
+  
+      .clickable.clicked1 {
+          background-color: green;
+      }
+  
+  
+     .abajo{
+          line-height: 50%;
+          position: absolute;
+          width: 100%;
+          bottom: 5px;
+     }
+     
+     .abajo hr{
+       margin:4px -10px 4px -1px;
+     }
+
+.bonito {
+    flex-basis: 100%;
+    padding: 10px;
+    max-width: 1000px;
+    background-color: rgb(71, 3, 102);
+    color: #f2f3ab;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 3px #000;
+  }
+  
+  .bonito:hover {
+    color: white;
+    cursor:pointer;
+    background-color: #aaa;
+    font-weight:bold;
+  }
+
+  .titulo {
+    border-radius: 10%;
+    margin-bottom: 10px;
+    position: relative;
+    text-align: center;
+    background-color: rgb(71, 3, 102);
+    height: auto;
+    width: 50%;
+    margin: 0 auto; /* Esto centrará horizontalmente el elemento */
+    color: #ffffff;
+    font-size: 50px;
+}
